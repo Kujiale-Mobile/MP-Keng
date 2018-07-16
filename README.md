@@ -16,7 +16,7 @@
 
 ## 坑们
 
-#### 1，onShareAppMessage 中设置封面在 Android 和 iOS 上展示策略不一致
+### 1，onShareAppMessage 中设置封面在 Android 和 iOS 上展示策略不一致
 
 **相关文档**
 
@@ -38,7 +38,7 @@ https://developers.weixin.qq.com/miniprogram/dev/api/share.html#onshareappmessag
 
 
 
-#### 2，wx.showToast 在 iOS 和 Android 上行为不一致
+### 2，wx.showToast 在 iOS 和 Android 上行为不一致
 
  **相关文档**
 
@@ -54,7 +54,7 @@ https://developers.weixin.qq.com/miniprogram/dev/api/api-react.html#wxshowtoasto
 
 
 
-#### 3，小程序的 web-view 中页面跳转后，点击 Android 手机上的物理返回按钮会返回前一个页面。而点击左上角的返回按钮，会直接关闭整个 web-view。
+### 3，小程序的 web-view 中页面跳转后，点击 Android 手机上的物理返回按钮会返回前一个页面。而点击左上角的返回按钮，会直接关闭整个 web-view。
 
 
 
@@ -62,7 +62,7 @@ https://developers.weixin.qq.com/miniprogram/dev/api/api-react.html#wxshowtoasto
 
 因 Canvas 坑实在太多，把 Canvas 的坑单独列出来
 
-#### 1，wx.canvasToTempFilePath 在模拟器和真机上行为不一致
+### 1，wx.canvasToTempFilePath 在模拟器和真机上行为不一致
 
 **相关文档**
 
@@ -80,7 +80,7 @@ https://developers.weixin.qq.com/blogdetail?action=get_post_info&lang=zh_CN&toke
 
 
 
-#### 2，canvasContext.font 的几个坑
+### 2，canvasContext.font 的几个坑
 
 **相关文档**
 
@@ -94,9 +94,9 @@ https://developers.weixin.qq.com/miniprogram/dev/api/canvas/font.html
 
 如果设置为 italic，在 Android 机上只有同时设置 weight 为 bold 才能生效。在 iOS 上，不管设不设置都不生效。而真机上是正常的。
 
+###  
 
-
-#### 3，canvasContext.drawImage 在 IDE 中可以直接设置网络图片进行绘制，但在真机上设置网络图片无用。 
+### 3，canvasContext.drawImage 在 IDE 中可以直接设置网络图片进行绘制，但在真机上设置网络图片无用。
 
 **相关文档**
 
@@ -108,7 +108,7 @@ https://developers.weixin.qq.com/miniprogram/dev/api/canvas/draw-image.html
 
 
 
-#### 4，canvasContext.clip 的一些坑
+### 4，canvasContext.clip 的一些坑
 
 **相关文档**
 
