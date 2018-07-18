@@ -103,6 +103,7 @@ https://developers.weixin.qq.com/miniprogram/dev/api/canvas/font.html
 https://developers.weixin.qq.com/miniprogram/dev/api/canvas/draw-image.html
 
 - **在 IDE 中可以直接设置网络图片进行绘制，但在真机上设置网络图片无用**
+
 **解决**
 
 使用 painter 库进行绘制，https://github.com/Kujiale-Mobile/Painter 。Painter 在进行图片绘制前，会先进行图片下载操作，并且还会把下载的图片存储本地，进行 LRU 管理，让后续绘制同样图片时，节省下载时间。
