@@ -108,7 +108,9 @@ https://developers.weixin.qq.com/miniprogram/dev/api/canvas/draw-image.html
 使用 painter 库进行绘制，https://github.com/Kujiale-Mobile/Painter 。Painter 在进行图片绘制前，会先进行图片下载操作，并且还会把下载的图片存储本地，进行 LRU 管理，让后续绘制同样图片时，节省下载时间。
 
 - **在 IDE 中可设置 base64 的图片数据进行绘制，但真机上无用**
+
 **解决**
+
 先把 base64 转成 Uint8ClampedArray 格式。然后再通过 [wx.canvasPutImageData(OBJECT, this)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/put-image-data.html) 绘制到画布上，然后把画布导出为图片。
 
 
