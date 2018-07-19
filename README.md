@@ -58,6 +58,20 @@ https://developers.weixin.qq.com/miniprogram/dev/api/api-react.html#wxshowtoasto
 
 
 
+### 4，原生组件之坑
+
+小程序可能为了实现方便，其中几个组件使用了原生组件，canvas，textarea，map，camera，video，live-player，live-pusher。而原生组件的层级最高，无法通过 z-index 来控制。而且也无法在 scroll-view、swiper、picker-view、movable-view 中使用这几个原生组件，否则效果可谓是惨不忍睹。
+
+
+
+**解决**
+
+使用 cover-view 和 cover-image 来覆盖在原生组件之上
+
+相关文档：https://developers.weixin.qq.com/miniprogram/dev/component/cover-view.html
+
+
+
 ## Canvas 篇
 
 因 Canvas 坑实在太多，把 Canvas 的坑单独列出来
