@@ -36,7 +36,7 @@ https://developers.weixin.qq.com/miniprogram/dev/api/share.html#onshareappmessag
 
 像这种非 5:4 的图片，尽量也弄成 5:4 的，然后多余部分用白色进行填充。
 
-
+---
 
 ### 2，wx.showToast 在 iOS 和 Android 上行为不一致
 
@@ -52,11 +52,11 @@ https://developers.weixin.qq.com/miniprogram/dev/api/api-react.html#wxshowtoasto
 
 如果想在这种情况下，Android 和 iOS 都能显示出 toast，那只能加个 timeout 延时了，比如 1s 后再 执行 `wx.navigateBack();` 的操作。
 
-
+---
 
 ### 3，小程序的 web-view 中页面跳转后，点击 Android 手机上的物理返回按钮会返回前一个页面。而点击左上角的返回按钮，会直接关闭整个 web-view。
 
-
+---
 
 ### 4，原生组件之坑
 
@@ -70,7 +70,7 @@ https://developers.weixin.qq.com/miniprogram/dev/api/api-react.html#wxshowtoasto
 
 相关文档：https://developers.weixin.qq.com/miniprogram/dev/component/cover-view.html
 
-
+---
 
 ### 5，video 组件的视频源地址不能有中文，否则在 iOS 上无法加载 
 
@@ -84,7 +84,7 @@ https://developers.weixin.qq.com/miniprogram/dev/component/video.html
 
 
 
-## Canvas 篇
+# Canvas 篇
 
 因 Canvas 坑实在太多，把 Canvas 的坑单独列出来
 
@@ -104,7 +104,7 @@ https://developers.weixin.qq.com/miniprogram/dev/api/canvas/temp-file.html
 
 https://developers.weixin.qq.com/blogdetail?action=get_post_info&lang=zh_CN&token=&docid=708aea205622cc8518cfeea3c154a5b7
 
-
+---
 
 ### 2，canvasContext.font 的几个坑
 
@@ -120,7 +120,7 @@ https://developers.weixin.qq.com/miniprogram/dev/api/canvas/font.html
 
 如果设置为 italic，在 Android 机上只有同时设置 weight 为 bold 才能生效。在 iOS 上，不管设不设置都不生效。而真机上是正常的。
 
-###  
+---
 
 ### 3，canvasContext.drawImage 的坑
 
@@ -139,6 +139,8 @@ https://developers.weixin.qq.com/miniprogram/dev/api/canvas/draw-image.html
 **解决**
 
 先把 base64 转成 Uint8ClampedArray 格式。然后再通过 [wx.canvasPutImageData(OBJECT, this)](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/put-image-data.html) 绘制到画布上，然后把画布导出为图片。
+
+---
 
 
 ### 4，canvasContext.clip 的一些坑
