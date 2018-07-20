@@ -72,6 +72,18 @@ https://developers.weixin.qq.com/miniprogram/dev/api/api-react.html#wxshowtoasto
 
 
 
+### 5，video 组件的视频源地址不能有中文，否则在 iOS 上无法加载 
+
+**相关文档**
+
+https://developers.weixin.qq.com/miniprogram/dev/component/video.html
+
+**现象**
+
+视频源地址设置中文后，Android 和模拟器上是可以正常播放的，但 iOS 上无法播放。
+
+
+
 ## Canvas 篇
 
 因 Canvas 坑实在太多，把 Canvas 的坑单独列出来
