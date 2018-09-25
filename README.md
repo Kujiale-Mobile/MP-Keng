@@ -82,6 +82,8 @@ https://developers.weixin.qq.com/miniprogram/dev/component/video.html
 
 视频源地址设置中文后，Android 和模拟器上是可以正常播放的，但 iOS 上无法播放。
 
+### 6，wx.showToast 文字最多可显示两行，多出部分会被截断，所以注意控制自己提示的内容。
+
 
 
 # Canvas 篇
