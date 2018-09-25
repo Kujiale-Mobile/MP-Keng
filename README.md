@@ -84,7 +84,7 @@ https://developers.weixin.qq.com/miniprogram/dev/component/video.html
 
 ### 6，wx.showToast 文字最多可显示两行，多出部分会被截断，所以注意控制自己提示的内容。
 
-
+### 7，wx.showModal 的 title 在 iOS 上只能显示一行，而在 Android 上可以显示两行。多出会 ...。
 
 # Canvas 篇
 
