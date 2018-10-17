@@ -86,6 +86,20 @@ https://developers.weixin.qq.com/miniprogram/dev/component/video.html
 
 ### 7，wx.showModal 的 title 在 iOS 上只能显示一行，而在 Android 上可以显示两行。多出会 ...。
 
+### 8，wx.showActionSheet 在 Android 和 iOS 上面行为差异过大。
+https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showActionSheet.html
+
+iOS 会从下部滑动上来，Android 会弹一个中间列表弹框。而且 iOS 的列表中会多一个 ”取消“ 的选项，更坑爹的时，后来一个版本竟然把 Android 的点击外部取消功能给干掉了，导致 Android 上只能按返回键才能取消 ActionSheet。
+
+我也不知道腾讯写的这个注意文档到底是为了啥。
+```
+注意
+Android 6.7.2 以下版本，点击取消或蒙层时，回调 fail, errMsg 为 "fail cancel"；
+Android 6.7.2 及以上版本 和 iOS 点击蒙层不会关闭模态弹窗，所以尽量避免使用「取消」分支中实现业务逻辑
+```
+
+### 8，wx.showActionSheet 在 Android 和 iOS 上面行为差异过大。 
+
 # Canvas 篇
 
 因 Canvas 坑实在太多，把 Canvas 的坑单独列出来
