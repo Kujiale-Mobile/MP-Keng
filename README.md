@@ -175,4 +175,30 @@ https://developers.weixin.qq.com/miniprogram/dev/api/canvas/clip.html
 ### 5，有关 web-view 中有背景音乐，后台后无法关闭的问题
 https://developers.weixin.qq.com/community/develop/doc/c75139c842a40c67cade23d3f66e7992
 
+```
+var hiddenProperty = 'hidden' in document ? 'hidden' :
+    'webkitHidden' in document ? 'webkitHidden' :
+    'mozHidden' in document ? 'mozHidden' :
+     null;
+
+
+
+if (hiddenProperty) {
+    var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, 'visibilitychange');
+
+    var onVisibilityChange = function() {
+
+    if (document[hiddenProperty]) {
+
+        !MpMovie.video.paused && MpMovie.video.pause();
+
+    }
+
+};
+
+
+
+document.addEventListener(visibilityChangeEvent, onVisibilityChange);
+```
+
 ---
