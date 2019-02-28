@@ -98,6 +98,45 @@ Android 6.7.2 以下版本，点击取消或蒙层时，回调 fail, errMsg 为 
 Android 6.7.2 及以上版本 和 iOS 点击蒙层不会关闭模态弹窗，所以尽量避免使用「取消」分支中实现业务逻辑
 ```
 
+### 9，在 iOS 上两个 Image 重合摆放，但更高层级上的 Image 无法显示问题
+
+微信小程序图片在同一父标签下重叠排布的时候会产生问题，具体表现为无论如何设定z-index，悬浮在上的图片一直会被沉在下方的图片遮盖。这个问题仅仅反映在iOS上，在模拟器和 Android 上都没有问题。
+在真机调试中发现，是小程序 image 标签，自带的 `overflow:hidden`；产生了影响，在取消该属性后就正常显示了，但是替换为 overflow： visble；等方式未起作用。解决办法有两种：
+
+1.使用cover-image代替上浮图片的image标签，这样在ios和android上都显示正常，但是在模拟器上似乎有些问题。
+2.使用一个 view 包裹上浮的图片。这样在三端表现一致且能解决上述问题。
+
+### 10，有关 web-view 中有背景音乐，后台后无法关闭的问题
+https://developers.weixin.qq.com/community/develop/doc/c75139c842a40c67cade23d3f66e7992
+
+```
+var hiddenProperty = 'hidden' in document ? 'hidden' :
+    'webkitHidden' in document ? 'webkitHidden' :
+    'mozHidden' in document ? 'mozHidden' :
+     null;
+
+
+
+if (hiddenProperty) {
+    var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, 'visibilitychange');
+
+    var onVisibilityChange = function() {
+
+    if (document[hiddenProperty]) {
+
+        !MpMovie.video.paused && MpMovie.video.pause();
+
+    }
+
+};
+
+
+
+document.addEventListener(visibilityChangeEvent, onVisibilityChange);
+```
+
+---
+
 ### 8，wx.showActionSheet 在 Android 和 iOS 上面行为差异过大。 
 
 # Canvas 篇
@@ -172,33 +211,4 @@ https://developers.weixin.qq.com/miniprogram/dev/api/canvas/clip.html
 
 如果想实现圆角，还是使用 Painter 库来解决。https://github.com/Kujiale-Mobile/Painter 。
 
-### 5，有关 web-view 中有背景音乐，后台后无法关闭的问题
-https://developers.weixin.qq.com/community/develop/doc/c75139c842a40c67cade23d3f66e7992
 
-```
-var hiddenProperty = 'hidden' in document ? 'hidden' :
-    'webkitHidden' in document ? 'webkitHidden' :
-    'mozHidden' in document ? 'mozHidden' :
-     null;
-
-
-
-if (hiddenProperty) {
-    var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, 'visibilitychange');
-
-    var onVisibilityChange = function() {
-
-    if (document[hiddenProperty]) {
-
-        !MpMovie.video.paused && MpMovie.video.pause();
-
-    }
-
-};
-
-
-
-document.addEventListener(visibilityChangeEvent, onVisibilityChange);
-```
-
----
