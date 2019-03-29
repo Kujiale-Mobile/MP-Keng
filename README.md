@@ -136,8 +136,16 @@ document.addEventListener(visibilityChangeEvent, onVisibilityChange);
 ```
 
 ---
+### 11，web-view 中调用如 openLocation 需要鉴权问题
+https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115
+此处鉴权必须得使用一个公众号的 appId 和 appsecret 才行。
 
-### 8，wx.showActionSheet 在 Android 和 iOS 上面行为差异过大。 
+**不能用对应小程序的**
+
+**千万不能用对应小程序的**
+
+
+### 12，wx.showActionSheet 在 Android 和 iOS 上面行为差异过大。 
 
 # Canvas 篇
 
