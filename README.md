@@ -151,6 +151,8 @@ https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115
 
 ### 12，wx.showActionSheet 在 Android 和 iOS 上面行为差异过大。 
 
+### 13，小程序的 Promise 在 iOS 上没有 finally，而 Android 和 IDE 上有。
+
 # Canvas 篇
 
 因 Canvas 坑实在太多，把 Canvas 的坑单独列出来
